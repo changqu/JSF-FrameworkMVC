@@ -1,0 +1,80 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<p:panelGrid id="Grid" columns="2" cellpadding="5"
+		style="margin: 0 auto">
+  #{msgs.identificador} 
+  <h:panelGroup>
+			<p:inputText id="identificador" value="#{registrarse.identificador}" required="true"
+				requiredMessage="#{msgs.formRegistrarse_identificador_requiredMessage}"
+				validatorMessage="#{msgs.formRegistrarse_identificador_validatorMessage}">
+				<f:validateLength maximum="20" />
+			</p:inputText>
+			<p:message for="identificador" />
+		</h:panelGroup>
+  #{msgs.nombre} 
+  <h:panelGroup>
+			<p:inputText value="#{registrarse.nombre}" required="true"
+				requiredMessage="#{msgs.formRegistrarse_nombre_requiredMessage}"
+				validatorMessage="#{msgs.formRegistrarse_nombre_validatorMessage}"
+				id="nombre">
+				<f:validateLength maximum="20" />
+			</p:inputText>
+			<p:message for="nombre" />
+		</h:panelGroup>
+  
+  #{msgs.apellidos} 
+  <h:panelGroup>
+			<p:inputText value="#{registrarse.apellidos}" required="true"
+				requiredMessage="#{msgs.formRegistrarse_apellidos_requiredMessage}"
+				validatorMessage="#{msgs.formRegistrarse_apellidos_validatorMessage}"
+				id="apellidos">
+				<f:validateLength maximum="40" />
+			</p:inputText>
+			<p:message for="apellidos" />
+		</h:panelGroup> 
+  
+  #{msgs.correo}
+  <h:panelGroup>
+			<p:inputText value="#{registrarse.email}" required="true"
+				requiredMessage="#{msgs.formRegistrarse_correo_requiredMessage}"
+				validatorMessage="#{msgs.formRegistrarse_correo_validatorMessage}"
+				id="correo">
+				<f:validateRegex pattern=".+@.+\.[a-z]+" />
+			</p:inputText>
+			<p:message for="correo" />
+		</h:panelGroup>
+		
+  #{msgs.password} 
+  <h:panelGroup>
+			<p:password value="#{registrarse.password}" required="true"
+				requiredMessage="#{msgs.formRegistrarse_password_requiredMessage}"
+				validatorMessage="#{msgs.formRegistrarse_password_validatorMessage}"
+				id="password">
+				<f:validateLength maximum="20" />
+			</p:password>
+			<p:message for="password" />
+		</h:panelGroup> 
+  #{msgs.repetirPassword} 
+  <h:panelGroup>
+			<p:password value="#{registrarse.repetirPassword}" required="true"
+				requiredMessage="#{msgs.formRegistrarse_repetirPassword_requiredMessage}"
+				validatorMessage="#{msgs.formRegistrarse_repetirPassword_validatorMessage}"
+				id="repetirPassword">
+				<f:validateLength maximum="20" />
+			</p:password>
+			<p:message for="repetirPassword" />
+		</h:panelGroup>
+		
+		<h:outputText id="msgRegistrarse" style="font-family: Arial, Helvetica; color: #FF0000; font-size: 149%;"
+					 value="#{msgs[registrarse.result]}" />  
+		
+		<p:commandButton id="btRegistrarse" value="#{msgs.botonRegistrarse}"
+			action="#{registrarse.registrarse}" update="Grid" process="@form">
+		</p:commandButton>
+	</p:panelGrid>
+
+</ui:composition>

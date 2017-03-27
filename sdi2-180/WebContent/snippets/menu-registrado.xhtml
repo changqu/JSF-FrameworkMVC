@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<p:menubar id="mimenu">
+	
+		<p:menuitem id="linkprincipal" value="#{msgs.principal}"
+				action="principal" />
+		<p:menuitem id="linklistaviajes" value="#{msgs.enlaceListaViajes}" actionListener="#{viajes.viajesActivos}"
+				action="listaViajes" />
+		<p:menuitem id="linkmisviajes" value="#{msgs.enlaceMisViajes}" actionListener="#{viajes.inicializarViajes}"
+				action="misViajes" />
+		<p:menuitem id="linkregistrarviaje" value="#{msgs.registrarViaje}"
+				action="registrarViaje" />
+				
+		<p:menuitem id="linkindex" value="#{msgs.enlaceCerrarSesion}" actionListener="#{login.cerrarSesion}"
+				action="logout" />
+		
+		<p:submenu id="submenuidioma" style="float:right" label="#{msgs.textoIdioma}"
+			icon="ui-icon-document">
+			<p:menuitem id="linkespa" value="#{msgs.enlaceIdiomaES}"
+				actionListener="#{settings.setSpanish}" update="@all" immediate="true"/>
+			<p:menuitem id="linkingles" value="#{msgs.enlaceIdiomaEN}"
+				actionListener="#{settings.setEnglish}" update="@all" immediate="true"/>
+			<p:menuitem id="linkchinese" value="#{msgs.enlaceIdiomaCN}"
+				actionListener="#{settings.setChinese}" update="@all" immediate="true"/>
+		</p:submenu>
+	</p:menubar>
+</ui:composition>

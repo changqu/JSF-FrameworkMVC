@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template-registrado.xhtml">
+	<ui:define name="titulo">#{msgs.tituloCrearViaje}</ui:define>
+	<ui:define name="cuerpo">
+	    <ui:include src="/snippets/form-operacionViaje.xhtml" >
+	    	<ui:param name="bean" value="#{registrarViaje}"/>
+	    </ui:include>
+	    
+	    <div class="ui-grid-row">
+	    	<h:panelGrid columns="2">
+	    		<h:outputText value="#{msgs.campoObligatorio}"/>
+	    		<br />
+	    		<h:outputLabel value="#{msgs.precargarValores}"/>
+		    	<p:selectBooleanCheckbox value="#{registrarViaje.tripDefecto}" id="viajeDefecto">
+						<p:ajax update="@form" listener="#{registrarViaje.cargarViajeDefecto}" />
+				</p:selectBooleanCheckbox>
+				<br />
+				<h:outputText id="msgRegistrarViaje" style="font-family: Arial, Helvetica; color: #FF0000; font-size: 149%;"
+				 value="#{msgs[registrarViaje.mensaje]}" /> 
+				<br />
+				<p:commandButton id="btRegistrarViaje" value="#{msgs.registrarViaje}" update="@form"
+					action="#{registrarViaje.registrarViaje}" />
+	    	</h:panelGrid>	    	
+	    </div>
+	</ui:define>
+</ui:composition>
+</html>

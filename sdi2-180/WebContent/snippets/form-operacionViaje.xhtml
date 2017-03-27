@@ -1,0 +1,156 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<div class="ui-grid-row">
+		<p:panel header="#{msgs.otrosDatos}">
+			<h:panelGrid columns="3">	    			
+	    			#{msgs.plazaMaximo}*
+	    			<p:inputText value="#{bean.maxPax}" required="true" id="plazaMaximo"
+					requiredMessage="#{msgs.required_plazaMaximo}">
+					<f:validateDoubleRange minimum="2" /> <!-- este tipo de validator saca mensaje por si solo^^ -->
+				</p:inputText>
+				<p:message for="plazaMaximo" />
+	    			
+	    			#{msgs.plazaLibre}*    
+	    			<p:inputText value="#{bean.availablePax}" required="true"
+					id="plazaLibre" requiredMessage="#{msgs.required_plazaLibre}">
+					<f:validateDoubleRange minimum="1" />
+				</p:inputText>
+				<p:message for="plazaLibre" />
+	    			
+	    			#{msgs.costeEstimado}*
+	    			<p:inputText value="#{bean.estimatedCost}" required="true"
+					id="costeEstimado"
+					requiredMessage="#{msgs.required_costeEstimado}">
+					<f:validateDoubleRange minimum="0" />
+				</p:inputText>
+				<p:message for="costeEstimado" />
+	    			
+	    			#{msgs.fechaCierre}*
+	    			<p:calendar value="#{bean.closingDate}" required="true"
+					id="fechaCierre" requiredMessage="#{msgs.required_fecha}" />
+				<p:message for="fechaCierre" />
+    				
+    				#{msgs.comentario}*
+    				<p:inputTextarea value="#{bean.comments}" required="true"
+					id="comentario" requiredMessage="#{msgs.required_comentario}" />
+				<p:message for="comentario" />
+			</h:panelGrid>
+		</p:panel>
+	</div>
+
+	<div class="ui-grid-row">
+		<div class="ui-grid-col-6">
+			<p:panel header="#{msgs.salida}">
+				<h:panelGrid columns="3">
+		    			#{msgs.direccion}*
+		    			<p:inputText value="#{bean.salidaAddress}" required="true"
+						requiredMessage="#{msgs.required_direccion}" id="direccionSalida" />
+					<p:message for="direccionSalida" />
+		    			
+		    			#{msgs.ciudad}*
+		    			<p:autoComplete id="salidaCiudad"
+						value="#{bean.salidaCity}"
+						completeMethod="#{ciudadProvincia.autocompletadoCiudad}" dropdown="true"
+						required="true" requiredMessage="#{msgs.required_ciudad}" />
+					<p:message for="salidaCiudad" />
+		    			
+		    			#{msgs.provincia}*
+	    				<p:autoComplete id="salidaProvincia"
+						value="#{bean.salidaState}"
+						completeMethod="#{ciudadProvincia.autocompletadoProvincia}" dropdown="true"
+						required="true" requiredMessage="#{msgs.required_provincia}" />
+					<p:message for="salidaProvincia" />
+		    			
+		    			#{msgs.pais}*
+		    			<p:inputText value="#{bean.salidaCountry}" required="true"
+						requiredMessage="#{msgs.required_pais}" id="salidaPais" />
+					<p:message for="salidaPais" />
+		    			
+		    			#{msgs.codigoPostal}*
+		    			<p:inputText value="#{bean.salidaZipCode}" required="true"
+						requiredMessage="#{msgs.required_codigoPostal}" id="salidaCodigoPostal" />
+					<p:message for="salidaCodigoPostal" />
+		    			
+		    			#{msgs.latitud}
+		    			<p:inputText value="#{bean.salidaLat}"
+						id="salidaLatitud">
+						<f:validateDoubleRange minimum="-90" maximum="90" />
+					</p:inputText>
+					<p:message for="salidaLatitud" />
+		    			
+		    			#{msgs.longitud}
+		    			<p:inputText value="#{bean.salidaLon}"
+						id="salidaLongitud">
+						<f:validateDoubleRange minimum="-180" maximum="180" />
+					</p:inputText>
+					<p:message for="salidaLongitud" />
+		    			
+		    			#{msgs.fechaSalida}*
+		    			<p:calendar value="#{bean.departureDate}" required="true"
+						requiredMessage="#{msgs.required_fecha}" id="salidaFecha" />
+					<p:message for="salidaFecha" />
+				</h:panelGrid>
+			</p:panel>
+		</div>
+		<div class="ui-grid-col-6">
+			<p:panel header="#{msgs.llegada}">
+				<h:panelGrid columns="3">
+		    			#{msgs.direccion}*
+		    			<p:inputText value="#{bean.llegadaAddress}"
+						required="true" requiredMessage="#{msgs.required_direccion}"
+						id="destinoDireccion" />
+					<p:message for="destinoDireccion" />
+		    			
+		    			#{msgs.ciudad}*
+		    			<p:autoComplete id="destinoCiudad"
+						value="#{bean.llegadaCity}"
+						completeMethod="#{ciudadProvincia.autocompletadoCiudad}" dropdown="true"
+						required="true" requiredMessage="#{msgs.required_ciudad}" />
+					<p:message for="destinoCiudad" />
+		    			
+		    			#{msgs.provincia}*
+	    				<p:autoComplete id="destinoProvincia"
+						value="#{bean.llegadaState}"
+						completeMethod="#{ciudadProvincia.autocompletadoProvincia}" dropdown="true"
+						required="true" requiredMessage="#{msgs.required_provincia}" />
+					<p:message for="destinoProvincia" />
+		    			
+		    			#{msgs.pais}*
+		    			<p:inputText value="#{bean.llegadaCountry}"
+						required="true" requiredMessage="#{msgs.required_pais}"
+						id="destinoPais" />
+					<p:message for="destinoPais" />
+		    			
+		    			#{msgs.codigoPostal}*
+		    			<p:inputText value="#{bean.llegadaZipCode}"
+						required="true" requiredMessage="#{msgs.required_codigoPostal}"
+						id="destinoCodigoPostal" />
+					<p:message for="destinoCodigoPostal" />
+		    			
+		    			#{msgs.latitud}
+		    			<p:inputText value="#{bean.llegadaLat}"
+						id="destinoLatitud">
+						<f:validateDoubleRange minimum="-90" maximum="90" />
+					</p:inputText>
+					<p:message for="destinoLatitud" />
+		    			
+		    			#{msgs.longitud}
+		    			<p:inputText value="#{bean.llegadaLon}"
+						id="destinoLongitud">
+						<f:validateDoubleRange minimum="-180" maximum="180" />
+					</p:inputText>
+					<p:message for="destinoLongitud" />
+		    			
+		    			#{msgs.fechaLlegada}*
+		    			<p:calendar value="#{bean.arrivalDate}" required="true"
+						requiredMessage="#{msgs.required_fecha}" id="fechaLlegada" />
+					<p:message for="fechaLlegada" />
+				</h:panelGrid>
+			</p:panel>
+		</div>
+	</div>
+</ui:composition>

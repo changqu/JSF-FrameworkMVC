@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template-registrado.xhtml">
+	<ui:define name="titulo">#{msgs.tituloViajeDetalle}</ui:define>
+	<ui:define name="cuerpo">
+		<p:panel header="#{msgs.tituloViajeDetalle}">
+		
+			<ui:include src="/snippets/form-detalle.xhtml" />
+			
+		    <p:dataTable  id="tablaParticipante" var="user" value="#{viajes.participantes}"> 
+		    	<p:column headerText="#{msgs.participante}">
+		    		<h:outputText value="#{user.login}"/>
+	    		</p:column>
+		    </p:dataTable>
+		    <p:dataTable  id="tablaParticipanteExcluido" var="user" value="#{viajes.participantesExcluidos}"> 
+		    	<p:column headerText="#{msgs.participanteExcluido}">
+		    		<h:outputText value="#{user.login}"/>
+	    		</p:column>
+		    </p:dataTable>
+		    <p:dataTable  id="tablaSolicitante" var="user" value="#{viajes.solicitantes}"> 
+		    	<p:column headerText="#{msgs.solicitante}">
+		    		<h:outputText value="#{user.login}"/>
+	    		</p:column>
+		    </p:dataTable>
+		    <br />
+		    <br />
+		    <p:commandButton type="submit" value="#{msgs.cancelarSolicitud}" actionListener="#{viajes.cancelarSolicitud}"
+						action="volver" id="btCancelarSolicitud"/>
+		    <br />
+		    <p:commandButton type="submit" value="#{msgs.volver}"
+						action="volver" id="btVolver"/>
+	    </p:panel>
+	</ui:define>
+</ui:composition>
+</html>

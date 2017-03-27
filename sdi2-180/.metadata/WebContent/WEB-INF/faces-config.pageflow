@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14796487786090" configfile="/sdi2-180/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="registrarse.xhtml" x="770" y="879" id="pf14796599992265" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf147967146362211 pf147974383305115" inlinks="pf14796808801463 pf147974383305116" path="/registrarse.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="1202" y="1165" id="pf14796607020887" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" outlinks="pf14796806303570 pf14796808801463 pf147974383305117 pf14803317681720" inlinks="pf147967146362211 pf147974383305118 pf14798164560820 pf14798164560821 pf14798164560822 pf14798387198970 pf14798387198971 pf14798387198972 pf14799159006587 pf14800727003260 pf14803317681720" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="indice.xhtml" x="122" y="178" id="pf147966718069010" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/principal.xhtml" x="986" y="1515" id="pf147967235901613" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" outlinks="pf147975497754120 pf14798164560820 pf14798387198983 pf14799157964480" inlinks="pf14796806303570 pf147975497754121 pf14797587850330 pf14798387198984 pf14798387198985 pf14798387198986 pf14799159006588 pf14800727003261" path="/registrado/principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="principal.xhtml" x="122" y="563" id="pf147967373300516" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="/registrado/principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listaViajesPublico.xhtml" x="986" y="879" id="pf147974383305119" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf147974383305116 pf147974383305118" inlinks="pf147974383305117 pf147974383305115" path="/listaViajesPublico.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/listaViajesRegistrado.xhtml" x="770" y="1368" id="pf147975497754122" referenceLink="//@navigationRule.10/@navigationCase.1/@toViewId|" outlinks="pf147975497754121 pf147975497754123 pf14798164560821 pf14798387198987 pf14799157964481" inlinks="pf147975497754120 pf147975497754124 pf14797587850341 pf14798387198988 pf14798387198989 pf147983871989810 pf14799159006589 pf14800727003262" path="/registrado/listaViajesRegistrado.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/viajeDetalle.xhtml" x="122" y="949" id="pf147975497754125" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf147975497754124 pf14797587850330 pf14797587850341 pf14798164560822 pf147983871989811 pf14799157964482 pf14800727003263" inlinks="pf147975497754123" path="/registrado/viajeDetalle.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/misViajes.xhtml" x="554" y="1717" id="pf147983871989812" referenceLink="//@navigationRule.10/@navigationCase.5/@toViewId|" outlinks="pf14798387198984 pf14798387198970 pf14798387198988 pf147983871989813 pf147983871989814 pf14799157964483 pf14800241029750" inlinks="pf14798387198983 pf14798387198987 pf147983871989811 pf147983871989815 pf147983871989816 pf147983871989817 pf147983871989818 pf147991590065810 pf14800727003264 pf14800727003265 pf14800727003263" path="/registrado/misViajes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/miViajeDetalle.xhtml" x="122" y="1333" id="pf147983871989819" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf14798387198985 pf14798387198971 pf14798387198989 pf147983871989815 pf147983871989816 pf147983909297821 pf14799157964484" inlinks="pf147983871989813 pf147983909297821" path="/registrado/miViajeDetalle.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/viajeRelacionadoDetalle.xhtml" x="122" y="1717" id="pf147983871989920" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf14798387198986 pf14798387198972 pf147983871989810 pf147983871989817 pf147983871989818 pf14799157964485" inlinks="pf147983871989814" path="/registrado/viajeRelacionadoDetalle.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/registrarViaje.xhtml" x="338" y="1389" id="pf14799157964486" referenceLink="//@navigationRule.10/@navigationCase.4/@toViewId|" outlinks="pf14799159006589 pf147991590065810 pf14799159006587 pf14799159006588" inlinks="pf14799157964480 pf14799157964481 pf14799157964482 pf14799157964483 pf14799157964484 pf14799157964485 pf14800727003266" path="/registrado/registrarViaje.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrado/modificarViaje.xhtml" x="122" y="2101" id="pf14800241029751" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf14800727003261 pf14800727003262 pf14800727003264 pf14800727003260 pf14800727003266 pf14800727003265" inlinks="pf14800241029750" path="/registrado/modificarViaje.xhtml"/>
+  <links id="pf147967146362211" target="pf14796607020887" source="pf14796599992265" outcome="login" redirect="true"/>
+  <links id="pf14796806303570" target="pf147967235901613" source="pf14796607020887" outcome="exito" redirect="true" fromaction="#{login.verify}"/>
+  <links id="pf14796808801463" target="pf14796599992265" source="pf14796607020887" outcome="registrarse" redirect="true"/>
+  <links id="pf147974383305117" target="pf147974383305119" source="pf14796607020887" outcome="listaViajes" redirect="true"/>
+  <links id="pf147974383305115" target="pf147974383305119" source="pf14796599992265" outcome="listaViajes" redirect="true"/>
+  <links id="pf147974383305116" target="pf14796599992265" source="pf147974383305119" outcome="registrarse" redirect="true"/>
+  <links id="pf147974383305118" target="pf14796607020887" source="pf147974383305119" outcome="login" redirect="true"/>
+  <links id="pf147975497754120" target="pf147975497754122" source="pf147967235901613" outcome="listaViajes" redirect="true"/>
+  <links id="pf147975497754121" target="pf147967235901613" source="pf147975497754122" outcome="principal" redirect="true"/>
+  <links id="pf147975497754123" target="pf147975497754125" source="pf147975497754122" outcome="verViaje" redirect="true"/>
+  <links id="pf147975497754124" target="pf147975497754122" source="pf147975497754125" outcome="volver" redirect="true"/>
+  <links id="pf14797587850330" target="pf147967235901613" source="pf147975497754125" outcome="principal" redirect="true"/>
+  <links id="pf14797587850341" target="pf147975497754122" source="pf147975497754125" outcome="listaViajes" redirect="true"/>
+  <links id="pf14798164560820" target="pf14796607020887" source="pf147967235901613" outcome="logout" redirect="true"/>
+  <links id="pf14798164560821" target="pf14796607020887" source="pf147975497754122" outcome="logout" redirect="true"/>
+  <links id="pf14798164560822" target="pf14796607020887" source="pf147975497754125" outcome="logout" redirect="true"/>
+  <links id="pf14798387198983" target="pf147983871989812" source="pf147967235901613" outcome="misViajes" redirect="true"/>
+  <links id="pf14798387198987" target="pf147983871989812" source="pf147975497754122" outcome="misViajes" redirect="true"/>
+  <links id="pf147983871989811" target="pf147983871989812" source="pf147975497754125" outcome="irMisViajes" redirect="true"/>
+  <links id="pf14798387198984" target="pf147967235901613" source="pf147983871989812" outcome="principal" redirect="true"/>
+  <links id="pf14798387198970" target="pf14796607020887" source="pf147983871989812" outcome="logout" redirect="true"/>
+  <links id="pf14798387198988" target="pf147975497754122" source="pf147983871989812" outcome="listaViajes" redirect="true"/>
+  <links id="pf147983871989813" target="pf147983871989819" source="pf147983871989812" outcome="verMiViaje" redirect="true"/>
+  <links id="pf147983871989814" target="pf147983871989920" source="pf147983871989812" outcome="verViajeRelacionado" redirect="true"/>
+  <links id="pf14798387198985" target="pf147967235901613" source="pf147983871989819" outcome="principal" redirect="true"/>
+  <links id="pf14798387198971" target="pf14796607020887" source="pf147983871989819" outcome="logout" redirect="true"/>
+  <links id="pf14798387198989" target="pf147975497754122" source="pf147983871989819" outcome="listaViajes" redirect="true"/>
+  <links id="pf147983871989815" target="pf147983871989812" source="pf147983871989819" outcome="misViajes" redirect="true"/>
+  <links id="pf147983871989816" target="pf147983871989812" source="pf147983871989819" outcome="volver" redirect="true"/>
+  <links id="pf14798387198986" target="pf147967235901613" source="pf147983871989920" outcome="principal" redirect="true"/>
+  <links id="pf14798387198972" target="pf14796607020887" source="pf147983871989920" outcome="logout" redirect="true"/>
+  <links id="pf147983871989810" target="pf147975497754122" source="pf147983871989920" outcome="listaViajes" redirect="true"/>
+  <links id="pf147983871989817" target="pf147983871989812" source="pf147983871989920" outcome="misViajes" redirect="true"/>
+  <links id="pf147983871989818" target="pf147983871989812" source="pf147983871989920" outcome="volver" redirect="true"/>
+  <links id="pf14799157964480" target="pf14799157964486" source="pf147967235901613" outcome="registrarViaje" redirect="true"/>
+  <links id="pf14799157964481" target="pf14799157964486" source="pf147975497754122" outcome="registrarViaje" redirect="true"/>
+  <links id="pf14799157964482" target="pf14799157964486" source="pf147975497754125" outcome="registrarViaje" redirect="true"/>
+  <links id="pf14799157964483" target="pf14799157964486" source="pf147983871989812" outcome="registrarViaje" redirect="true"/>
+  <links id="pf14799157964484" target="pf14799157964486" source="pf147983871989819" outcome="registrarViaje" redirect="true"/>
+  <links id="pf14799157964485" target="pf14799157964486" source="pf147983871989920" outcome="registrarViaje" redirect="true"/>
+  <links id="pf14799159006589" target="pf147975497754122" source="pf14799157964486" outcome="listaViajes" redirect="true"/>
+  <links id="pf147991590065810" target="pf147983871989812" source="pf14799157964486" outcome="misViajes" redirect="true"/>
+  <links id="pf14799159006587" target="pf14796607020887" source="pf14799157964486" outcome="logout" redirect="true"/>
+  <links id="pf14799159006588" target="pf147967235901613" source="pf14799157964486" outcome="principal" redirect="true"/>
+  <links id="pf14800241029750" target="pf14800241029751" source="pf147983871989812" outcome="modificarMiViaje" redirect="true"/>
+  <links id="pf14800727003261" target="pf147967235901613" source="pf14800241029751" outcome="principal" redirect="true"/>
+  <links id="pf14800727003262" target="pf147975497754122" source="pf14800241029751" outcome="listaViajes" redirect="true"/>
+  <links id="pf14800727003264" target="pf147983871989812" source="pf14800241029751" outcome="misViajes" redirect="true"/>
+  <links id="pf14800727003260" target="pf14796607020887" source="pf14800241029751" outcome="logout" redirect="true"/>
+  <links id="pf14800727003266" target="pf14799157964486" source="pf14800241029751" outcome="registrarViaje" redirect="true"/>
+  <links id="pf14800727003265" target="pf147983871989812" source="pf14800241029751" outcome="volver" redirect="true"/>
+  <links id="pf147983909297821" target="pf147983871989819" source="pf147983871989819" outcome="quedar" redirect="true">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14800727003263" target="pf147983871989812" source="pf147975497754125" outcome="misViajes" redirect="true"/>
+  <links id="pf14803317681720" target="pf14796607020887" source="pf14796607020887" outcome="error" redirect="true" fromaction="#{login.verify}"/>
+</pageflow:Pageflow>

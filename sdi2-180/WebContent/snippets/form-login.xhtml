@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:panelGrid id="Grid" columns="2" cellpadding="5" style="margin: 0 auto">
+		#{msgs.login_form_name_label}: 
+		<h:panelGroup>
+			<p:inputText id="name" value="#{login.name}" required="true"
+				requiredMessage="#{msgs.login_form_name_required}" />
+			<p:message for="name" />
+		</h:panelGroup>
+  
+		#{msgs.login_form_password_label}: 
+		<h:panelGroup>
+			<p:password id="password" value="#{login.password}" required="true"
+				requiredMessage="#{msgs.login_form_password_required}" />
+			<p:message for="password" />
+		</h:panelGroup>
+
+		<h:outputText id="msgLogin" style="font-family: Arial, Helvetica; color: #FF0000; font-size: 149%;"
+					 value="#{msgs[login.result]}" /><!-- interesante, login.result apunta un properties del archivo y con este metodo lo accedemos -->
+		
+		<p:commandButton id="btLogin" value="#{msgs.login_form_button_send}"
+			action="#{login.verify}" update="Grid" process="@form">
+		</p:commandButton>
+	</p:panelGrid>
+
+</ui:composition>

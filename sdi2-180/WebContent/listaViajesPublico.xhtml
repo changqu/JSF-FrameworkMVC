@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template-publico.xhtml">
+	<ui:define name="titulo">#{msgs.tituloViaje}</ui:define>
+	<ui:define name="cuerpo">
+		<p:panel header="#{msgs.tituloViaje}">
+		    <p:dataTable id="tablaListaViajePublico" var="trip" value="#{viajes.trips}" filteredValue="#{viajes.tripsFiltrado}"
+		    	rows="10" paginator="true" rowsPerPageTemplate="5, 10, 15"
+		    	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"> 
+		    	
+		    	<p:column headerText="#{msgs.origen}" sortBy="#{trip.departure.city}"
+		    		filterBy="#{trip.departure.city}" filterMatchMode="contains">
+		    		<h:outputText value="#{trip.departure.city}"/>
+	    		</p:column>
+	    		
+		    	<p:column headerText="#{msgs.fechaSalida}" sortBy="#{trip.departureDate}">
+		    		<h:outputText value="#{trip.departureDate}">
+		    			<f:convertDateTime pattern="dd/MM/yyyy" type="date"/>
+		    		</h:outputText>
+		    	</p:column>
+		    	
+		    	<p:column headerText="#{msgs.destino}" sortBy="#{trip.destination.city}"
+		    		filterBy="#{trip.destination.city}" filterMatchMode="contains">
+		    		<h:outputText value="#{trip.destination.city}"/>
+	    		</p:column>
+	    		
+		    	<p:column headerText="#{msgs.fechaLlegada}" sortBy="#{trip.arrivalDate}">
+		    		<h:outputText value="#{trip.arrivalDate}">
+		    			<f:convertDateTime pattern="dd/MM/yyyy" type="date"/>
+		    		</h:outputText>
+		    	</p:column>	 
+		    	
+		    	<p:column headerText="#{msgs.promotor}" sortBy="#{trip.promoterId}">
+		    		<h:outputText value="#{trip.promoterId}"/>
+		    	</p:column>	 
+		    </p:dataTable>
+	    </p:panel>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template-registrado.xhtml">
+	<ui:define name="titulo">#{msgs.tituloMisViajes}</ui:define>
+	<ui:define name="cuerpo">
+		<p:panel header="#{msgs.tituloMisViajesActivos}">
+			<p:dataTable id="tablaMiViaje" var="trip" value="#{viajes.misViajes}"
+				filteredValue="#{viajes.tripsFiltrado}" rows="5" paginator="true"
+				rowsPerPageTemplate="5, 10, 15"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+
+				<p:column headerText="#{msgs.selectViaje}">
+		    		<p:selectBooleanCheckbox id="selectViaje" value="#{viajes.viajesCancelados[trip]}">
+		    		</p:selectBooleanCheckbox>
+		    	</p:column>
+		    	
+		    	<p:column headerText="#{msgs.fechaCierre}" sortBy="#{trip.closingDate}">
+					<h:outputText value="#{trip.closingDate}" >
+						<f:convertDateTime pattern="dd/MM/yyyy" type="date" />
+					</h:outputText>
+				</p:column>
+
+				<ui:include src="/snippets/form-listaViaje.xhtml" />
+				
+				<p:column headerText="#{msgs.estadoViaje}" sortBy="#{trip.status}">
+					<h:outputText value="#{trip.status}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs.opcion}">
+					<p:commandButton id="ver" type="submit" value="#{msgs.ver}"
+						action="verMiViaje" inmediate="true"
+						actionListener="#{viajes.viajeDetalle(trip)}" />
+					<p:commandButton id="modificar" type="submit" value="#{msgs.modificar}"
+						action="modificarMiViaje" inmediate="true"
+						actionListener="#{modificarViaje.cargaViaje(trip)}" />
+				</p:column>
+				
+				<f:facet name="footer">
+				    <p:commandButton id="btCancelarViaje" value="#{msgs.cancelarViajes}" 
+				    	update="@form" action="#{viajes.cancelarViajes}"/>
+		    	</f:facet>
+
+			</p:dataTable>
+		</p:panel>
+		<p:panel header="#{msgs.tituloMisViajesRelacionados}">
+			<p:dataTable id="tablaViajeRelacionado" var="trip" value="#{viajes.viajesRelacionados}"
+				filteredValue="#{viajes.tripsFiltrado}" rows="5" paginator="true"
+				rowsPerPageTemplate="2, 6, 10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+
+				<p:column headerText="#{msgs.fechaCierre}" sortBy="#{trip.closingDate}">
+					<h:outputText value="#{trip.closingDate}" >
+						<f:convertDateTime pattern="dd/MM/yyyy" type="date" />
+					</h:outputText>
+				</p:column>
+
+				<ui:include src="/snippets/form-listaViaje.xhtml" />
+				
+				<p:column headerText="#{msgs.estadoViaje}" sortBy="#{trip.status}">
+					<h:outputText value="#{trip.status}" />
+				</p:column>
+				
+				<p:column headerText="#{msgs.opcion}">
+					<p:commandButton id="verViajeRelacionado" type="submit" value="#{msgs.ver}"
+						action="verViajeRelacionado" inmediate="true"
+						actionListener="#{viajes.viajeDetalle(trip)}" />
+				</p:column>
+
+			</p:dataTable>
+		</p:panel>
+	</ui:define>
+</ui:composition>
+</html>

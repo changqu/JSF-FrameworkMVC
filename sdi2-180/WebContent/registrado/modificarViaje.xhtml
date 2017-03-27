@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/template-registrado.xhtml">
+	<ui:define name="titulo">#{msgs.tituloModificarViaje}</ui:define>
+	<ui:define name="cuerpo">	    
+	    <ui:include src="/snippets/form-operacionViaje.xhtml" >
+	    	<ui:param name="bean" value="#{modificarViaje}"></ui:param>
+	    </ui:include>
+	    
+	    <div class="ui-grid-row">
+	    	<h:panelGrid columns="2">
+	    		<h:outputText value="#{msgs.campoObligatorio}"/>
+	    		<br />
+				<h:outputText id="msgModificarViaje" style="font-family: Arial, Helvetica; color: #FF0000; font-size: 149%;"
+				 value="#{msgs[modificarViaje.mensaje]}" /> 
+				<br />
+				<p:commandButton id="btVolver" value="#{msgs.volver}" type="submit" action="volver" />
+				<br />
+				<p:commandButton id="btModificarViaje" value="#{msgs.modificarViaje}" update="@form"
+					action="#{modificarViaje.modificarViaje}" />
+	    	</h:panelGrid>	    	
+	    </div>
+	</ui:define>
+</ui:composition>
+</html>
